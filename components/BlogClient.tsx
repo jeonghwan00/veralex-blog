@@ -35,7 +35,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
 
   return (
     <>
-      <main className="pt-24 pb-16">
+      <main className="pt-20 pb-16">
         {/* Hero Section */}
         <section className="px-4 pb-12 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto">

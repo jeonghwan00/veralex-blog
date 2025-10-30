@@ -58,15 +58,20 @@ export default function PostPage({ params }: PostPageProps) {
     notFound()
   }
 
+  // Remove the first heading from content since we display it in the header
+  const contentWithoutTitle = post.content.replace(/^#\s+.+$/m, '').trim()
+
   return (
-    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-      <header className="mb-8">
+    <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
+      <header className="mb-12">
         {post.category && (
           <div className="mb-4">
-            <span className="text-indigo-600 font-medium">{post.category}</span>
+            <span className="inline-block px-3 py-1 text-sm font-medium text-indigo-600 bg-indigo-50 rounded-full">
+              {post.category}
+            </span>
           </div>
         )}
-        <h1 className="text-4xl font-bold mb-4">{post.title || 'Untitled'}</h1>
+        <h1 className="text-4xl lg:text-5xl font-bold mb-6">{post.title || 'Untitled'}</h1>
         <div className="flex items-center gap-4 text-gray-600">
           <span>{post.author || 'VeraLex Team'}</span>
           <span>•</span>
@@ -77,7 +82,7 @@ export default function PostPage({ params }: PostPageProps) {
       </header>
 
       <div className="prose prose-lg max-w-none">
-        <MDXRemote source={post.content} />
+        <MDXRemote source={contentWithoutTitle} />
       </div>
     </article>
   )
