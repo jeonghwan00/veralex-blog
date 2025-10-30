@@ -61,16 +61,18 @@ export default function PostPage({ params }: PostPageProps) {
   return (
     <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <header className="mb-8">
-        <div className="mb-4">
-          <span className="text-indigo-600 font-medium">{post.category}</span>
-        </div>
-        <h1 className="text-4xl font-bold mb-4">{post.title}</h1>
+        {post.category && (
+          <div className="mb-4">
+            <span className="text-indigo-600 font-medium">{post.category}</span>
+          </div>
+        )}
+        <h1 className="text-4xl font-bold mb-4">{post.title || 'Untitled'}</h1>
         <div className="flex items-center gap-4 text-gray-600">
-          <span>{post.author}</span>
+          <span>{post.author || 'VeraLex Team'}</span>
           <span>•</span>
-          <time>{new Date(post.date).toLocaleDateString()}</time>
+          <time>{post.date ? new Date(post.date).toLocaleDateString() : 'No date'}</time>
           <span>•</span>
-          <span>{post.readTime}</span>
+          <span>{post.readTime || '5 min read'}</span>
         </div>
       </header>
 
