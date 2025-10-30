@@ -8,7 +8,18 @@ interface PostPageProps {
   params: { slug: string }
 }
 
-function getPost(slug: string) {
+interface Post {
+  slug: string
+  content: string
+  title?: string
+  date?: string
+  author?: string
+  category?: string
+  readTime?: string
+  excerpt?: string
+}
+
+function getPost(slug: string): Post | null {
   try {
     const filePath = path.join(process.cwd(), 'content/posts', `${slug}.mdx`)
     const fileContents = fs.readFileSync(filePath, 'utf8')
@@ -18,7 +29,7 @@ function getPost(slug: string) {
       slug,
       content,
       ...data
-    }
+    } as Post
   } catch (error) {
     return null
   }
