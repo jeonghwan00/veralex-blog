@@ -113,7 +113,7 @@ export default function PostPage({ params }: PostPageProps) {
           className="inline-flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
         >
           <ArrowLeft className="h-4 w-4" />
-          <span>뒤로가기</span>
+          <span>Back to Blog</span>
         </Link>
       </div>
 
@@ -151,7 +151,7 @@ export default function PostPage({ params }: PostPageProps) {
               >
                 <span className="text-sm text-gray-500 flex items-center gap-1">
                   <ChevronLeft className="h-4 w-4" />
-                  이전글
+                  Previous
                 </span>
                 <span className="font-medium group-hover:text-indigo-600 transition-colors line-clamp-2">
                   {prevPost.title}
@@ -161,9 +161,9 @@ export default function PostPage({ params }: PostPageProps) {
               <div className="text-gray-400">
                 <span className="text-sm flex items-center gap-1">
                   <ChevronLeft className="h-4 w-4" />
-                  이전글
+                  Previous
                 </span>
-                <span className="text-sm">없음</span>
+                <span className="text-sm">No previous post</span>
               </div>
             )}
           </div>
@@ -176,7 +176,7 @@ export default function PostPage({ params }: PostPageProps) {
                 className="group inline-flex flex-col space-y-2 hover:text-indigo-600 transition-colors"
               >
                 <span className="text-sm text-gray-500 flex items-center justify-end gap-1">
-                  다음글
+                  Next
                   <ChevronRight className="h-4 w-4" />
                 </span>
                 <span className="font-medium group-hover:text-indigo-600 transition-colors line-clamp-2 text-right">
@@ -186,10 +186,10 @@ export default function PostPage({ params }: PostPageProps) {
             ) : (
               <div className="text-gray-400">
                 <span className="text-sm flex items-center justify-end gap-1">
-                  다음글
+                  Next
                   <ChevronRight className="h-4 w-4" />
                 </span>
-                <span className="text-sm">없음</span>
+                <span className="text-sm">No next post</span>
               </div>
             )}
           </div>
