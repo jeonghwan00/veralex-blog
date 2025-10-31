@@ -164,11 +164,18 @@ export default function BlogClient({ posts }: BlogClientProps) {
             <p className="text-lg text-gray-600 mb-8">
               Connect with verified attorneys for fixed-price legal services
             </p>
-            <Link href="http://localhost:5173/request">
-              <Button size="lg">
-                Get Started Now
-              </Button>
-            </Link>
+            <div className="flex gap-4 justify-center">
+              <Link href="http://localhost:5173/request">
+                <Button size="lg">
+                  Get Started Now
+                </Button>
+              </Link>
+              <Link href="http://localhost:5173/attorney-application">
+                <Button size="lg" className="bg-white text-black border border-gray-200 hover:bg-gray-50">
+                  Join as Attorney
+                </Button>
+              </Link>
+            </div>
           </div>
         </section>
       </main>
