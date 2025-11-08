@@ -37,19 +37,20 @@ export default function BlogClient({ posts }: BlogClientProps) {
     <>
       <main className="pt-20 pb-16">
         {/* Hero Section */}
-        <section className="px-4 pb-12 bg-gradient-to-b from-gray-50 to-white">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge className="mb-4" variant="secondary">
-                VeraLex Blog
-              </Badge>
-              <h1 className="text-4xl lg:text-5xl font-bold mb-4">
-                Insights & Updates
-              </h1>
-              <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-                Stories, guides, and thoughts on making legal services more accessible for everyone
-              </p>
-            </div>
+        <section className="px-4 pb-16 bg-gradient-to-b from-[#f8faff] to-white border-b">
+          <div className="max-w-6xl mx-auto text-center pt-16">
+            <Badge className="mb-4 bg-primary/10 text-primary font-medium">
+              VeraLex Blog
+            </Badge>
+            <h1 className="text-5xl font-extrabold mb-6 text-gray-900">
+              Insights & Updates
+            </h1>
+            <p className="text-base text-gray-600 max-w-2xl mx-auto leading-relaxed mb-1">
+              Stories, guides, and thoughts on
+            </p>
+            <p className="text-base md:text-lg text-primary font-semibold mt-1 leading-snug">
+              Accessible Legal Help, Made Simple.
+            </p>
           </div>
         </section>
 
