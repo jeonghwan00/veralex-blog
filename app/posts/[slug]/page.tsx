@@ -60,8 +60,8 @@ function getAllPosts(): Post[] {
       } as Post
     })
     .sort((a, b) => {
-      const dateA = a.date ? new Date(a.date).getTime() : 0
-      const dateB = b.date ? new Date(b.date).getTime() : 0
+      const dateA = a.date ? new Date(a.date + 'T00:00:00').getTime() : 0
+      const dateB = b.date ? new Date(b.date + 'T00:00:00').getTime() : 0
       return dateB - dateA
     })
 }
@@ -129,7 +129,7 @@ export default function PostPage({ params }: PostPageProps) {
         <div className="flex items-center gap-4 text-gray-600">
           <span>{post.author || 'VeraLex Team'}</span>
           <span>•</span>
-          <time>{post.date ? new Date(post.date).toLocaleDateString() : 'No date'}</time>
+          <time>{post.date ? new Date(post.date + 'T00:00:00').toLocaleDateString() : 'No date'}</time>
           <span>•</span>
           <span>{post.readTime || '5 min read'}</span>
         </div>

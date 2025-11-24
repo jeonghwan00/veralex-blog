@@ -43,7 +43,7 @@ function getPosts(): Post[] {
         featured: data.featured || false,
       }
     })
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+    .sort((a, b) => new Date(b.date + 'T00:00:00').getTime() - new Date(a.date + 'T00:00:00').getTime())
 
   return posts
 }

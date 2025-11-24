@@ -67,7 +67,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                         <div className="flex justify-between items-start mb-2">
                           <Badge 
                             variant="outline"
-                            className={post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]" : ""}
+                            className={post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] border-2 text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] px-3 py-1 rounded-full font-semibold" : ""}
                           >
                             {post.category}
                           </Badge>
@@ -83,7 +83,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                           <div className="flex items-center gap-4">
                             <span className="flex items-center gap-1">
                               <Calendar className="h-3 w-3" />
-                              {new Date(post.date).toLocaleDateString()}
+                              {new Date(post.date + 'T00:00:00').toLocaleDateString()}
                             </span>
                             <span className="flex items-center gap-1">
                               <Clock className="h-3 w-3" />
@@ -118,7 +118,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                       key={category}
                       onClick={() => setSelectedCategory(category)}
                       size="sm"
-                      className="bg-[#A8D5BA] hover:bg-[#8FC9A8] text-gray-800 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] shadow-sm"
+                      className="bg-[#A8D5BA] hover:bg-[#8FC9A8] text-gray-800 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] shadow-sm px-5 py-2 rounded-full font-semibold"
                     >
                       {category}
                     </Button>
@@ -132,7 +132,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                       variant="outline"
                       onClick={() => setSelectedCategory(category)}
                       size="sm"
-                      className="border-[#A8D5BA] text-[#7AA68A] hover:bg-[#A8D5BA]/10 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]"
+                      className="border-[#A8D5BA] border-2 text-[#7AA68A] hover:bg-[#A8D5BA]/10 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] px-5 py-2 rounded-full font-semibold"
                     >
                       {category}
                     </Button>
@@ -172,7 +172,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                       <CardHeader>
                         <Badge 
                           variant="outline" 
-                          className={`mb-2 w-fit ${post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]" : ""}`}
+                          className={`mb-2 w-fit ${post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] border-2 text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] px-3 py-1 rounded-full font-semibold" : ""}`}
                         >
                           {post.category}
                         </Badge>
