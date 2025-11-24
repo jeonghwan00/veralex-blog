@@ -22,7 +22,7 @@ interface BlogClientProps {
   posts: Post[]
 }
 
-const categories = ["All", "Company", "Legal Info", "Immigration", "Business", "Updates"]
+const categories = ["All", "Company", "Legal Info", "Immigration", "Business", "Baklava", "Updates"]
 
 export default function BlogClient({ posts }: BlogClientProps) {
   const [selectedCategory, setSelectedCategory] = useState("All")
@@ -65,7 +65,12 @@ export default function BlogClient({ posts }: BlogClientProps) {
                     <Link href={`/posts/${post.slug}`} className="block">
                       <CardHeader>
                         <div className="flex justify-between items-start mb-2">
-                          <Badge variant="outline">{post.category}</Badge>
+                          <Badge 
+                            variant="outline"
+                            className={post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]" : ""}
+                          >
+                            {post.category}
+                          </Badge>
                           <Badge className="bg-yellow-100 text-yellow-800">Featured</Badge>
                         </div>
                         <CardTitle className="text-xl hover:text-primary transition-colors">
@@ -102,16 +107,49 @@ export default function BlogClient({ posts }: BlogClientProps) {
         <section className="px-4 pb-8">
           <div className="max-w-7xl mx-auto">
             <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map(category => (
-                <Button
-                  key={category}
-                  variant={selectedCategory === category ? "default" : "outline"}
-                  onClick={() => setSelectedCategory(category)}
-                  size="sm"
-                >
-                  {category}
-                </Button>
-              ))}
+              {categories.map(category => {
+                // Special styling for Baklava category
+                const isBaklava = category === "Baklava"
+                const isSelected = selectedCategory === category
+                
+                if (isBaklava && isSelected) {
+                  return (
+                    <Button
+                      key={category}
+                      onClick={() => setSelectedCategory(category)}
+                      size="sm"
+                      className="bg-[#A8D5BA] hover:bg-[#8FC9A8] text-gray-800 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] shadow-sm"
+                    >
+                      {category}
+                    </Button>
+                  )
+                }
+                
+                if (isBaklava) {
+                  return (
+                    <Button
+                      key={category}
+                      variant="outline"
+                      onClick={() => setSelectedCategory(category)}
+                      size="sm"
+                      className="border-[#A8D5BA] text-[#7AA68A] hover:bg-[#A8D5BA]/10 font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]"
+                    >
+                      {category}
+                    </Button>
+                  )
+                }
+                
+                return (
+                  <Button
+                    key={category}
+                    variant={isSelected ? "default" : "outline"}
+                    onClick={() => setSelectedCategory(category)}
+                    size="sm"
+                  >
+                    {category}
+                  </Button>
+                )
+              })}
             </div>
           </div>
         </section>
@@ -132,7 +170,10 @@ export default function BlogClient({ posts }: BlogClientProps) {
                   <Card key={post.slug} className="hover:shadow-lg transition-shadow">
                     <Link href={`/posts/${post.slug}`} className="block">
                       <CardHeader>
-                        <Badge variant="outline" className="mb-2 w-fit">
+                        <Badge 
+                          variant="outline" 
+                          className={`mb-2 w-fit ${post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive]" : ""}`}
+                        >
                           {post.category}
                         </Badge>
                         <CardTitle className="text-lg hover:text-primary transition-colors">
