@@ -26,7 +26,7 @@ export default function RootLayout({
                 Vera<span className="text-primary">Lex</span> Blog
               </Link>
               <a
-                href="http://localhost:5173"
+                href="https://veralex.co"
                 className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
               >
                 <ArrowLeft className="h-4 w-4" />
