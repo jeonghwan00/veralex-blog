@@ -28,7 +28,7 @@ export default function RootLayout({
               <a
                 href="https://veralex.co"
                 className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
-              >
+              >111\
                 <ArrowLeft className="h-4 w-4" />
                 Back to VeraLex
               </a>
