@@ -65,7 +65,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                     <Link href={`/posts/${post.slug}`} className="block">
                       <CardHeader>
                         <div className="flex justify-between items-start mb-2">
-                          <Badge 
+                          <Badge
                             variant="outline"
                             className={post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] border-2 text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] px-3 py-1 rounded-full font-semibold" : ""}
                           >
@@ -111,7 +111,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                 // Special styling for Baklava category
                 const isBaklava = category === "Baklava"
                 const isSelected = selectedCategory === category
-                
+
                 if (isBaklava && isSelected) {
                   return (
                     <Button
@@ -124,7 +124,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                     </Button>
                   )
                 }
-                
+
                 if (isBaklava) {
                   return (
                     <Button
@@ -138,7 +138,7 @@ export default function BlogClient({ posts }: BlogClientProps) {
                     </Button>
                   )
                 }
-                
+
                 return (
                   <Button
                     key={category}
@@ -170,8 +170,8 @@ export default function BlogClient({ posts }: BlogClientProps) {
                   <Card key={post.slug} className="hover:shadow-lg transition-shadow">
                     <Link href={`/posts/${post.slug}`} className="block">
                       <CardHeader>
-                        <Badge 
-                          variant="outline" 
+                        <Badge
+                          variant="outline"
                           className={`mb-2 w-fit ${post.category === "Baklava" ? "bg-[#A8D5BA]/20 border-[#A8D5BA] border-2 text-[#5A8A6F] font-['Comic_Sans_MS',_'Chalkboard_SE',_cursive] px-3 py-1 rounded-full font-semibold" : ""}`}
                         >
                           {post.category}
@@ -207,12 +207,12 @@ export default function BlogClient({ posts }: BlogClientProps) {
               Connect with verified attorneys for fixed-price legal services
             </p>
             <div className="flex gap-4 justify-center">
-              <Link href="http://localhost:5173/request">
+              <Link href="https://veralex.co/request">
                 <Button size="lg">
                   Get Started Now
                 </Button>
               </Link>
-              <Link href="http://localhost:5173/attorney-application">
+              <Link href="https://veralex.co/attorney-application">
                 <Button size="lg" className="bg-white text-black border border-gray-200 hover:bg-gray-50">
                   Join as Attorney
                 </Button>
