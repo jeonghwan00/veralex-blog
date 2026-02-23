@@ -184,6 +184,19 @@ Add to `app/layout.tsx`:
 <Script src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID" />
 ```
 
+## Commit Message Tags
+
+Use these prefixes for commit messages:
+
+| Tag | When to use |
+|---|---|
+| `New Post:` | Adding a new blog post |
+| `Add` | Adding a new feature or component |
+| `Fix:` | Bug fixes |
+| `Update` | Enhancements to existing features |
+
+Example: `New Post: Will AI Replace Lawyers?`
+
 ## 🤝 Contributing
 
 1. Write posts in MDX format
